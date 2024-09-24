@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+
+
+.tab{
+    width: 100%; 
+}
+
+th, td{
+    border: 2px solid black;
+    height: 60px;
+}
+
+.form{
+    border-radius: 9px;
+    margin-top: 60px;
+    justify-content: center;
+    display: grid;
+    align-items: start;
+    /* width: 20%; */
+    /* margin-left: 10px; */
+}
+
+.btn{
+    margin-left: 45px;
+    width: 40%;
+    height: 40px;
+    background-color: rgb(147, 147, 245);
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.btn:hover{
+    background-color: black;
+}

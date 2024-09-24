@@ -8,17 +8,17 @@ function valid(){
     email=document.getElementById("email").value
     pin=document.getElementById("pin").value
     console.log(name,phno,email,pin);
-    if(phno.length!=10){
-        document.getElementById("num_error").innerHTML="invalid number"
+    if (!phno.match(/^[6-9]\d{9}$/)) {
+        document.getElementById("num_error").innerHTML = "*invalid number"
     }
     
     if(pin.length!=6){
-        document.getElementById("pin_error").innerHTML="invalid pin"
+        document.getElementById("pin_error").innerHTML="*invalid pin"
     }
-    if(email.match("@gmail.com")){
+    if(email.match("@gmail.com$")){
     }
     else{
-        document.getElementById("email_error").innerHTML="invalid email"
+        document.getElementById("email_error").innerHTML="*invalid email"
     }
 
 }
