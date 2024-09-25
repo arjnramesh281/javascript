@@ -5,28 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js"></script>
 </head>
 <body>
     <table class="tab">
         <thead> 
-            <tr>
-                <th>ID</th>
+            <tr class="heading">
                 <th>NAME</th>
                 <th>AGE</th>
+                <th>PLACE</th>
             </tr>
         </thead>
         <tbody>
-
+            
         </tbody>
     </table>
-    <div class="form">
-        <label for="id">id :</label>
-        <input type="text" name="" id="id"><br>
-        <label for="name">Name :</label>    
+
+<div class="forms">
+    <form id="submit_form">
+        <label for="name">name :</label>
         <input type="text" name="" id="name"><br>
-        <label for="age">age :</label>
+        <label for="age">age :</label>    
         <input type="tel" name="" id="age"><br>
-        <button class="btn">SUBMIT</button>
-    </div>
+        <label for="place">place :</label>
+        <input type="text" name="" id="place"><br>
+        <button class="btn" value="submit">SUBMIT</button>
+    </form>
+    <form id="edit_form">
+        <label for="name">name :</label>
+        <input type="text" name="" id="name"><br>
+        <label for="age">age :</label>    
+        <input type="tel" name="" id="age"><br>
+        <label for="place">place :</label>
+        <input type="text" name="" id="place"><br>
+        <button class="btn" value="submit">SUBMIT</button>
+    </form>
+</div>
+    
+    <script src="./script.js"></script>
 </html>
