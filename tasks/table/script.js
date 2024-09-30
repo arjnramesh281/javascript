@@ -18,6 +18,7 @@ function display(){
         t_place.textContent=element.place
         t_row.appendChild(t_place)
 
+        // edit 
         const edit_td=document.createElement("td")
         const edit_btn=document.createElement("button")
         edit_btn.textContent="Edit"
@@ -62,7 +63,7 @@ document.getElementById("submit_form").addEventListener("submit",function(event)
 let edit_name=""
 function edit_frm(name) {
     console.log("editing",name);
-    document.getElementById("edit_form").style.display="grid"
+    document.getElementById("edit_form").style.display="flex"
     document.getElementById("submit_form").style.display="none"
     const edit_details=d.find(user=>user.name==name)
     document.getElementById("e_name").value=edit_details.name
