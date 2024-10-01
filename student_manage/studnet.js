@@ -104,4 +104,37 @@ function edit_form(id) {
     
 }
 
+
+document.getElementById("edit_form").addEventListener("update",function (event) {
+    event.preventDefault()
+    const e_id=document.getElementById("e_id").value
+    const e_name=document.getElementById("e_name").value
+    const e_age=document.getElementById("e_age").value
+    const e_email=document.getElementById("e_email").value
+    const e_course=document.getElementById("e_course").value
+    const e_date=document.getElementById("e_date").value
+    // console.log(e_name,e_age,e_place);
+    data=data.map(user=>{
+        if(user.name==edit_id){
+            return {...user,id:e_id,name:e_name,age:e_age,email:e_email,course:e_course,date:e_date}
+        }
+        return user
+    })
+
+    document.getElementById("edit_form").style.display="none"
+    document.getElementById("norm_form").style.display="grid"
+    display()
+
+})
+
+function delete_data(name) {
+    d=d.filter(user=>{
+        if(user.name!=name){
+            return user
+        }
+    })
+
+    display()
+
+}  
 display()
