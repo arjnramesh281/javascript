@@ -17,3 +17,57 @@
     width: 18%;
     margin-left: 40%;
 }
+
+/* General table styling */
+table.tab {
+    width: 100%;
+    border-collapse: collapse; /* Ensures no double borders between cells */
+    margin: 20px 0;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+/* Styling for the table header */
+table.tab thead th {
+    background-color: #4CAF50; /* Green background for header */
+    color: white;
+    padding: 12px 15px;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes header text uppercase */
+    border-bottom: 2px solid #ddd;
+}
+
+/* Styling for the table rows */
+table.tab tbody tr {
+    border-bottom: 1px solid #ddd; /* Adds a subtle border under rows */
+}
+
+/* Styling for table cells */
+table.tab td {
+    padding: 10px 15px;
+    color: #333;
+}
+
+/* Add alternating row colors for better readability */
+table.tab tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for rows */
+table.tab tbody tr:hover {
+    background-color: #e2e2e2;
+    transition: background-color 0.3s ease;
+}
+
+/* Add some spacing for the table */
+table.tab {
+    margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    table.tab {
+        font-size: 14px;
+    }
+}

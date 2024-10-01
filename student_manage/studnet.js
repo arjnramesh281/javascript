@@ -1,4 +1,4 @@
-data=[{id:"21",name:"abc",age:21,email:"a@gmail.com",course:"python",date:"10/11/2024"}]
+data=[{id:"21",name:"abc",age:21,email:"a@gmail.com",course:"python",date:"10/11/2024"},{id:"451",name:"aswin",age:21,email:"aswin@gmail.com",course:"flutter",date:"10/11/2024"},{id:"81",name:"sugu",age:51,email:"sugu@gmail.com",course:"none",date:"10/11/2024"},{id:"31",name:"manu",age:21,email:"manu@gmail.com",course:"c++",date:"10/11/2024"}]
 
 function display() {
     const t_var=document.querySelector("#tab tbody")
@@ -40,24 +40,24 @@ function display() {
         const edit_td=document.createElement("td")
         const edit_btn=document.createElement("button")
         edit_btn.textContent="Edit"
-        edit_btn.onclick=function () {
-            norm_form(element.id)
+        edit_btn.onclick=function(){
+            edit_form(element.id)
         }
         edit_td.appendChild(edit_btn)
         t_row.appendChild(edit_td)
 
         
         // delete
-        // const  del_td=document.createElement("td")
-        // const  del_btn=document.createElement("button")
-        // del_btn.textContent="delete"
-        // del_btn.onclick=function() {
-        //     delete_data(element.name)
+        const  del_td=document.createElement("td")
+        const  del_btn=document.createElement("button")
+        del_btn.textContent="delete"
+        del_btn.onclick=function() {
+            delete_data(element.id)
             
-        // }
+        }
 
-        // del_td.appendChild(del_btn)
-        // t_row.appendChild(del_td)
+        del_td.appendChild(del_btn)
+        t_row.appendChild(del_td)
 
         
         t_var.appendChild(t_row)
@@ -69,7 +69,7 @@ function display() {
 
 document.getElementById("norm_form").addEventListener("submit",function(event){
     event.preventDefault() // to remove refresh
-    const id=parseInt(document.getElementById("id").value)
+    const id=document.getElementById("id").value
     const name=document.getElementById("name").value
     const age=parseInt(document.getElementById("age").value)
     const email=document.getElementById("email").value
@@ -89,7 +89,7 @@ document.getElementById("norm_form").addEventListener("submit",function(event){
 
 let edit_id=""
 function edit_form(id) {
-    // console.log("editing",id);
+    console.log("editing",id);
     document.getElementById("edit_form").style.display="grid"
     document.getElementById("norm_form").style.display="none"
     const edit_details=data.find(user=>user.id==id)
@@ -105,7 +105,7 @@ function edit_form(id) {
 }
 
 
-document.getElementById("edit_form").addEventListener("update",function (event) {
+document.getElementById("edit_form").addEventListener("submit",function (event) {
     event.preventDefault()
     const e_id=document.getElementById("e_id").value
     const e_name=document.getElementById("e_name").value
@@ -115,7 +115,7 @@ document.getElementById("edit_form").addEventListener("update",function (event) 
     const e_date=document.getElementById("e_date").value
     // console.log(e_name,e_age,e_place);
     data=data.map(user=>{
-        if(user.name==edit_id){
+        if(user.id==edit_id){
             return {...user,id:e_id,name:e_name,age:e_age,email:e_email,course:e_course,date:e_date}
         }
         return user
@@ -127,9 +127,9 @@ document.getElementById("edit_form").addEventListener("update",function (event) 
 
 })
 
-function delete_data(name) {
-    d=d.filter(user=>{
-        if(user.name!=name){
+function delete_data(id) {
+    data=data.filter(user=>{
+        if(user.id!=id){
             return user
         }
     })
