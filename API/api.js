@@ -1,14 +1,22 @@
-fetch('https://dummyjson.com/products').then(response => response.json()).then(data=>{
-    data.products.forEach(element => {
-        // console.log(element.category);
-        const row=document.querySelector(".row")
-        const col=document.createElement("div")
-        col.classList.add("col-lg-3")
-        col.innerHTML=`
-        <img src="${element.images}" width="100%">
-        <h2 >${element.title}</h2>
-        <h4 >${element.category}</h4>
-        `
-        row.appendChild(col)
-    });
-})
+fetch('https://dummyjson.com/products')
+.then(response => response.json())
+.then(data => {
+  data.products.forEach(element => {
+    const row = document.querySelector(".row");
+    const col = document.createElement("div");
+    col.classList.add("col-lg-3", "mb-4");
+    col.innerHTML = `
+      <div class="card h-100">
+        <img src="${element.thumbnail}" class="card-img-top" alt="${element.title}">
+        <div class="card-body">
+          <h5 class="card-title">${element.title}</h5>
+          <p class="card-text">${element.category}</p>
+        </div>
+        <div class="card-footer">
+          <h6 class="text-muted">$${element.price}</h6>
+        </div>
+      </div>
+    `;
+    row.appendChild(col);
+  });
+});
