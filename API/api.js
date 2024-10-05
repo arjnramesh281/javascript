@@ -4,7 +4,7 @@ fetch('https://dummyjson.com/products')
   data.products.forEach(element => {
     const row = document.querySelector(".row");
     const col = document.createElement("div");
-    col.classList.add("col-lg-3", "mb-4");
+    col.classList.add("col-lg-2", "mb-4");
     col.innerHTML = `
       <div class="card h-100">
         <img src="${element.thumbnail}" class="card-img-top" alt="${element.title}">
